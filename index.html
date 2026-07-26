@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Exklusives Einfamilienhaus mit separater Einliegerwohnung in Ludwigshafen. 376 m² Wohnfläche, 573 m² Grundstück, 10 Zimmer und 6 Bäder.">
+  <title>Exklusives Einfamilienhaus mit Einliegerwohnung in Ludwigshafen</title>
+
+  <style>
+    :root {
+      --bg: #f5f2ec;
+      --card: #ffffff;
+      --text: #1f2421;
+      --muted: #6d746f;
+      --accent: #7b674f;
+      --accent-dark: #544433;
+      --line: #ded8cf;
+      --shadow: 0 16px 40px rgba(30, 30, 25, 0.10);
+      --radius: 22px;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.65;
+    }
+
+    img, video {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 36px));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 20;
+      background: rgba(18, 22, 20, 0.72);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .nav {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      color: #fff;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      font-size: 0.96rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      color: rgba(255,255,255,0.92);
+      font-size: 0.94rem;
+    }
+
+    .nav-links a:hover {
+      color: #fff;
+    }
+
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      display: grid;
+      place-items: end center;
+      overflow: hidden;
+      background: #171b19;
+    }
+
+    .hero video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to top, rgba(10,14,12,0.84) 0%, rgba(10,14,12,0.35) 48%, rgba(10,14,12,0.18) 100%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      width: min(980px, calc(100% - 36px));
+      color: #fff;
+      padding: 140px 0 80px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      margin: 0 0 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.82);
+    }
+
+    h1 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.5rem, 6vw, 5.7rem);
+      line-height: 1.02;
+      font-weight: 500;
+      text-wrap: balance;
+    }
+
+    .hero-subtitle {
+      margin: 24px auto 0;
+      max-width: 760px;
+      font-size: clamp(1rem, 2vw, 1.28rem);
+      color: rgba(255,255,255,0.9);
+    }
+
+    .hero-actions {
+      margin-top: 32px;
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 0 23px;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: 0.2s ease;
+      border: 1px solid transparent;
+    }
+
+    .button.primary {
+      background: #fff;
+      color: #222;
+    }
+
+    .button.primary:hover {
+      transform: translateY(-2px);
+    }
+
+    .button.secondary {
+      border-color: rgba(255,255,255,0.48);
+      color: #fff;
+      background: rgba(255,255,255,0.08);
+    }
+
+    main section {
+      padding: 88px 0;
+    }
+
+    .section-intro {
+      max-width: 760px;
+      margin-bottom: 40px;
+    }
+
+    .section-kicker {
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--accent);
+      font-size: 0.76rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      margin: 0 0 16px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2rem, 4vw, 3.7rem);
+      font-weight: 500;
+      line-height: 1.1;
+    }
+
+    h3 {
+      margin-top: 0;
+      font-size: 1.35rem;
+    }
+
+    .lead {
+      font-size: 1.12rem;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .facts {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .fact {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .fact strong {
+      display: block;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 2rem;
+      margin-bottom: 4px;
+      color: var(--accent-dark);
+    }
+
+    .fact span {
+      color: var(--muted);
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .panel {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 34px;
+      box-shadow: var(--shadow);
+    }
+
+    .panel ul {
+      margin: 20px 0 0;
+      padding-left: 20px;
+    }
+
+    .panel li + li {
+      margin-top: 8px;
+    }
+
+    .highlight {
+      background: #252b28;
+      color: #fff;
+    }
+
+    .highlight .section-kicker,
+    .highlight .lead {
+      color: rgba(255,255,255,0.72);
+    }
+
+    .highlight-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 36px;
+    }
+
+    .highlight-card {
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: var(--radius);
+      padding: 26px;
+      background: rgba(255,255,255,0.05);
+    }
+
+    .energy-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .energy-value {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 260px;
+      background: linear-gradient(145deg, #f1e7d8, #ffffff);
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .energy-value .grade {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 7rem;
+      line-height: 1;
+      color: var(--accent-dark);
+    }
+
+    .contact {
+      text-align: center;
+      background: var(--card);
+      border-radius: 30px;
+      padding: 60px 24px;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .contact p {
+      max-width: 660px;
+      margin: 0 auto 24px;
+      color: var(--muted);
+    }
+
+    footer {
+      padding: 34px 0 48px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    @media (max-width: 900px) {
+      .facts {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .split,
+      .energy-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .highlight-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .hero-content {
+        padding-bottom: 52px;
+      }
+
+      .facts {
+        grid-template-columns: 1fr;
+      }
+
+      main section {
+        padding: 66px 0;
+      }
+
+      .panel {
+        padding: 26px 22px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#start">IMMOBILIE LUDWIGSHAFEN</a>
+      <nav class="nav-links" aria-label="Hauptnavigation">
+        <a href="#objekt">Objekt</a>
+        <a href="#wohnungen">Wohneinheiten</a>
+        <a href="#energie">Energie</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" id="start">
+    <video autoplay muted loop playsinline poster="hero.jpg">
+      <source src="hero.mp4" type="video/mp4">
+      Ihr Browser unterstützt dieses Videoformat nicht.
+    </video>
+
+    <div class="hero-content">
+      <p class="eyebrow">Privatverkauf · Ludwigshafen</p>
+      <h1>Exklusives Einfamilienhaus mit Einliegerwohnung</h1>
+      <p class="hero-subtitle">
+        Großzügiges Wohnen auf ca. 376 m² mit separater Einliegerwohnung,
+        Gartenbereichen, Sauna und vielseitigen Nutzungsmöglichkeiten.
+      </p>
+
+      <div class="hero-actions">
+        <a class="button primary" href="#objekt">Objekt entdecken</a>
+        <a class="button secondary" href="#kontakt">Kontakt aufnehmen</a>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section id="objekt">
+      <div class="container">
+        <div class="section-intro">
+          <div class="section-kicker">Das Anwesen</div>
+          <h2>Viel Raum für Familie, Gäste und neue Lebensmodelle</h2>
+          <p class="lead">
+            Das Haus verbindet eine großzügige Hauptwohnung mit einer eigenständig
+            nutzbaren Einliegerwohnung. Beide Wohneinheiten verfügen über eigene
+            Terrassen und Gartenbereiche.
+          </p>
+        </div>
+
+        <div class="facts">
+          <div class="fact"><strong>376 m²</strong><span>Wohnfläche gesamt</span></div>
+          <div class="fact"><strong>573 m²</strong><span>Grundstück</span></div>
+          <div class="fact"><strong>10</strong><span>Zimmer</span></div>
+          <div class="fact"><strong>6</strong><span>Bäder</span></div>
+          <div class="fact"><strong>39 m²</strong><span>Garage</span></div>
+          <div class="fact"><strong>2</strong><span>Wohneinheiten</span></div>
+          <div class="fact"><strong>C</strong><span>Energieeffizienzklasse</span></div>
+          <div class="fact"><strong>2024</strong><span>Heizkessel erneuert</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="highlight">
+      <div class="container">
+        <div class="section-intro">
+          <div class="section-kicker">Besondere Merkmale</div>
+          <h2>Großzügig, flexibel und hochwertig ausgestattet</h2>
+          <p class="lead">
+            Das Raumangebot eignet sich unter anderem für Mehrgenerationenwohnen,
+            Wohnen und Arbeiten unter einem Dach oder die separate Nutzung der Einliegerwohnung.
+          </p>
+        </div>
+
+        <div class="highlight-grid">
+          <div class="highlight-card">
+            <h3>Separate Einliegerwohnung</h3>
+            <p>Eigener Eingang, eigene Küche, zwei Bäder sowie Terrasse und Gartenbereich.</p>
+          </div>
+          <div class="highlight-card">
+            <h3>Komfort</h3>
+            <p>Sauna, klimatisierte Obergeschosse, Balkon, Loggia und mehrere Außenbereiche.</p>
+          </div>
+          <div class="highlight-card">
+            <h3>Aktuelle Heiztechnik</h3>
+            <p>Ölbrennwertkessel aus dem Jahr 2024 und Energieeffizienzklasse C.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="wohnungen">
+      <div class="container">
+        <div class="section-intro">
+          <div class="section-kicker">Wohneinheiten</div>
+          <h2>Hauptwohnung und Einliegerwohnung</h2>
+        </div>
+
+        <div class="split">
+          <article class="panel">
+            <h3>Hauptwohnung</h3>
+            <p>
+              Die Hauptwohnung bietet rund 250 m² großzügig gestalteten Wohnbereich
+              und viel Platz für anspruchsvolles Familienleben.
+            </p>
+            <ul>
+              <li>ca. 250 m² Wohnbereich</li>
+              <li>5 Zimmer</li>
+              <li>4 Bäder</li>
+              <li>Küche</li>
+              <li>Sauna</li>
+              <li>Klimatisiertes Obergeschoss</li>
+              <li>Eigene Terrasse mit Gartenbereich</li>
+            </ul>
+          </article>
+
+          <article class="panel">
+            <h3>Einliegerwohnung</h3>
+            <p>
+              Die separat zugängliche Einliegerwohnung ist eigenständig nutzbar
+              und eignet sich für Angehörige, Gäste, Homeoffice oder Vermietung.
+            </p>
+            <ul>
+              <li>ca. 90 m² Wohnbereich</li>
+              <li>3 Zimmer</li>
+              <li>2 Bäder</li>
+              <li>Küche</li>
+              <li>Separater Eingang</li>
+              <li>Klimatisiertes Obergeschoss</li>
+              <li>Eigene Terrasse mit Gartenbereich</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="aussen">
+      <div class="container">
+        <div class="section-intro">
+          <div class="section-kicker">Außenbereiche</div>
+          <h2>Terrassen, Garten, Balkon und Loggia</h2>
+          <p class="lead">
+            Beide Wohneinheiten verfügen über eigene Außenbereiche. Ergänzt wird
+            das Angebot durch Balkon, Loggia und eine großzügige Garage mit ca. 39 m².
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="energie">
+      <div class="container">
+        <div class="section-intro">
+          <div class="section-kicker">Energie und Technik</div>
+          <h2>Solide Energieeffizienz und erneuerte Heiztechnik</h2>
+        </div>
+
+        <div class="energy-grid">
+          <div class="energy-value">
+            <div>
+              <div class="grade">C</div>
+              <strong>Energieeffizienzklasse</strong>
+            </div>
+          </div>
+
+          <div class="panel">
+            <h3>Energiekennwerte</h3>
+            <ul>
+              <li>Endenergiebedarf: 94,25 kWh/(m²·a)</li>
+              <li>Energieeffizienzklasse: C</li>
+              <li>Ölheizung mit Brennwertkessel</li>
+              <li>Baujahr Heizkessel: 2024</li>
+              <li>Energieausweis erstellt am 17.11.2024</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="kontakt">
+      <div class="container">
+        <div class="contact">
+          <div class="section-kicker">Kontakt</div>
+          <h2>Weitere Informationen auf Anfrage</h2>
+          <p>
+            Die genaue Adresse, weitere Bilder, Grundrisse und Besichtigungstermine
+            werden nach persönlicher Kontaktaufnahme mitgeteilt.
+          </p>
+
+          <!-- Ersetze die Adresse unten später durch deine eigene Gmail-Adresse -->
+          <a class="button primary" href="mailto:maison.sapin24@gmail.com">
+            E-Mail senden
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      Privatverkauf · Exklusives Einfamilienhaus mit Einliegerwohnung in Ludwigshafen
+    </div>
+  </footer>
+</body>
+</html>
